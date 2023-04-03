@@ -1,0 +1,15 @@
+{
+    "eslint.validate": ["typescript"],
+    "eslint.lintTask.options": [".", "--ext", ".ts"],
+    "suggest.autoTrigger": "none",
+    "suggest.timeout": 2,
+    "pyright.inlayHints.enable": false,
+    "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "typescript.suggestionActions.enabled": false,
+    "rust-analyzer.completion.addCallParenthesis": false,
+    "rust-analyzer.checkOnSave.enable": true,
+    "codeLens.enable": true,
+    "java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+    "java.referencesCodeLens.enabled": true
+}
