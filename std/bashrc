@@ -135,6 +135,7 @@ sinit() {
         curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/tmux.theme" > ~/.std/tmux.theme
         echo "manual run: echo 'source ~/.std/bashrc' >> ~/.bashrc"
         return 0
+    fi
 
     return 0
 }
