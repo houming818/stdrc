@@ -120,7 +120,7 @@ sdoc() {
 }
 
 sinit() {
-    REPO_HOST="https://gitlab.grepcode.cn:55584"
+    REPO_HOST="https://gitee.com"
 
     if [ "$1" == "" ] ; then
         echo "usage: sinit [bash|nvim]"
@@ -129,20 +129,13 @@ sinit() {
 
     if [ "$1" == "bash" ]; then
         mkdir ~/.std/ -p
-        curl -sL "$REPO_HOST/root/sinit/-/raw/main/bashrc" > ~/.std/bashrc
-        curl -sL "$REPO_HOST/root/sinit/-/raw/main/std/zcolor.sh" > ~/.std/zcolor.sh
-        curl -sL "$REPO_HOST/root/sinit/-/raw/main/std/tmux.conf" > ~/.std/tmux.conf
-        curl -sL "$REPO_HOST/root/sinit/-/raw/main/std/tmux.theme" > ~/.std/tmux.theme
+        curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/bashrc" > ~/.std/bashrc
+        curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/zcolor.sh" > ~/.std/zcolor.sh
+        curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/tmux.conf" > ~/.std/tmux.conf
+        curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/tmux.theme" > ~/.std/tmux.theme
         echo "manual run: echo 'source ~/.std/bashrc' >> ~/.bashrc"
         return 0
-    fi
 
-    if [ "$1" == "nvim" ]; then
-        sdoc add.nvim
-        return 0
-    fi
-
-    curl -sL "$REPO_HOST/root/sinit/-/raw/main/script/install_$1.sh" | bash -
     return 0
 }
 
@@ -181,7 +174,6 @@ sspeed() {
     # fi
 
     #STATIC_HOST="https://pages.grepcode.cn"
-    REPO_HOST="https://gitlab.grepcode.cn:55584"
 
     if [ $1 == 'stdout' ]; then
         perl -e 'while (<>) {$l++;if (time > $e) {$e=time;print "$l\n";$l=0}}'
@@ -215,20 +207,6 @@ stdpass() {
     fi
     echo "usage: stdpass [count] [alphabet:a-zA-Z0-9]"
     return 0
-}
-
-stdss() {
-    if [ "$1" == "config" ];
-    then
-        read -e -p "proxy-port:" -i 5030 port
-        read -e -s -p "proxy-pass:" -i "ss@grepcode.cn" pass
-        echo ""
-        read -e -p "hash-method:" -i "aes-256-cfb" method
-        read -e -p "domain:" -i "gcloud.grepcode.cn" domain
-        echo "generate from $method:******@$domain:$port"
-        echo "aes-256-cfb:$pass@$domain:$port" | echo "ss://""$(base64 -w 0)"
-        return 0
-    fi
 }
 
 # git 相关俚语
