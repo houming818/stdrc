@@ -1,0 +1,19 @@
+# 下载所有的rc文件
+git clone https://gitee.com/stduolc/stdrc.git ~/.stdrc
+
+## Setup bash
+manual run: echo 'source ~/.stdrc/std/bashrc' >> ~/.bashrc
+
+## Setup Neovim
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+mkdir -p ~/.config/nvim/autoload
+cp ~/.stdrc/std/init.vim ~/.config/nvim/init.vim
+cp ~/.stdrc/std/plug.vim ~/.config/nvim/autoload/plug.vim
+:CocInstall coc-css coc-git coc-go coc-html coc-java coc-json coc-lists coc-phpls coc-pyright coc-sh coc-tsserver coc-yaml
+mkdir -p ~/.config/nvim/pack/github/start
+git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
+:Copilot setup
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 

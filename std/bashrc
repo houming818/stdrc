@@ -89,54 +89,29 @@ if type kubectl >/dev/null 2>&1; then
     source <(kubectl completion bash)
 fi
 
-function kconf(){
-    if [ $1 == "ls" ] ; then
-        kubectl config get-contexts
-    else
-        kubectl config use-context $1
-    fi
-}
-
 # std* functions
 sdoc() {
-    REPO_HOST="https://gitlab.grepcode.cn:55584"
 
     if [ "$1" == "" ] ; then
-        curl -sL "$REPO_HOST/root/sinit/-/raw/main/std/help.txt"
-        return 0
-    fi
-
-    if [ "$1" == "help" ] ; then
-        curl -sL "$REPO_HOST/root/sinit/-/raw/main/std/help.txt"
+        cat ~/.stdrc/doc/note.txt
         return 0
     fi
 
     if [ "$1" != "" ] ; then
-        curl -sL "$REPO_HOST/root/sinit/-/raw/main/std/$1.txt"
+        cat ~/.stdrc/doc/$1.txt
         return 0
     fi
 
     return 0
 }
 
-sinit() {
-    REPO_HOST="https://gitee.com"
-
-    if [ "$1" == "" ] ; then
-        echo "usage: sinit [bash|nvim]"
-        return 0
+stdrc() {
+    if [ ! -d ~/.stdrc ]; then
+        git clone https://gitee.com/stduolc/stdrc.git ~/.stdrc
+    else
+        cd ~/.stdrc
+        git pull
     fi
-
-    if [ "$1" == "bash" ]; then
-        mkdir ~/.std/ -p
-        curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/bashrc" > ~/.std/bashrc
-        curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/zcolor.sh" > ~/.std/zcolor.sh
-        curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/tmux.conf" > ~/.std/tmux.conf
-        curl -sL "$REPO_HOST/stduolc/stdrc/raw/master/std/tmux.theme" > ~/.std/tmux.theme
-        echo "manual run: echo 'source ~/.std/bashrc' >> ~/.bashrc"
-        return 0
-    fi
-
     return 0
 }
 
