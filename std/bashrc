@@ -52,6 +52,7 @@ fi
 # alias start #
 
 # 一般命令改造
+alias ..='cd ..'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
