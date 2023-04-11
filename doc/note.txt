@@ -4,11 +4,17 @@ git clone https://gitee.com/stduolc/stdrc.git ~/.stdrc
 ## Setup bash
 manual run: echo 'source ~/.stdrc/std/bashrc' >> ~/.bashrc
 
+## NVM Setup
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+
 ## Setup Neovim
+
+### 安装最新版的Neovim
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
+
 mkdir -p ~/.config/nvim/autoload
 cp ~/.stdrc/std/init.vim ~/.config/nvim/init.vim
 cp ~/.stdrc/std/plug.vim ~/.config/nvim/autoload/plug.vim
@@ -16,4 +22,3 @@ cp ~/.stdrc/std/plug.vim ~/.config/nvim/autoload/plug.vim
 mkdir -p ~/.config/nvim/pack/github/start
 git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
 :Copilot setup
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 

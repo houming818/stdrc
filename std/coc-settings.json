@@ -3,7 +3,7 @@
     "eslint.lintTask.options": [".", "--ext", ".ts"],
     "suggest.autoTrigger": "none",
     "suggest.timeout": 2,
-    "pyright.inlayHints.enable": false,
+    "inlayHint.enable": false,
     "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
     "typescript.suggestionActions.enabled": false,
