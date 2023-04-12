@@ -171,7 +171,7 @@ stdwhois() {
   whois -h $(whois -h whois.iana.org ${1##*.} |   egrep -e '^whois:' |   sed -e 's/[[:space:]][[:space:]]*/ /g' |   cut -d " " -f 2) $1
 }
 
-stdpass() {
+spass() {
     if [ "$2" ]; 
     then
         echo $(head -n 128 /dev/urandom |tr -dc $2|cut -b 1-$1)
@@ -182,7 +182,7 @@ stdpass() {
         echo $(head -n 128 /dev/urandom |tr -dc 'a-zA-Z0-9'|cut -b 1-$1)
         return 0
     fi
-    echo "usage: stdpass [count] [alphabet:a-zA-Z0-9]"
+    echo "usage: spass [count] [alphabet:a-zA-Z0-9]"
     return 0
 }
 
