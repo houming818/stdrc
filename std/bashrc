@@ -130,6 +130,12 @@ sdig() {
         curl "https://t.grepcode.cn/dig_info" 2>/dev/null
         return
     fi
+
+    if [ "$1" == "myip" ]; then
+        dig +short myip.opendns.com @resolver1.opendns.com
+        return
+    fi
+
     if [ -n "$1" ] && [ -n "$2" ] && [ -n "$3" ]; then
         curl "https://t.grepcode.cn/dig?domain=$1&dns=$2&_fmt=$3" 2>/dev/null
     elif [ -n "$1" ] && [ -n "$2" ] ; then
