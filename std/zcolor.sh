@@ -217,12 +217,12 @@ prompt_context() {
 
     if [[ "$user" != "root" ]]; then
         prompt_segment white black "$(TZ=PRC date +%H:%M:%S)"
-	    prompt_segment default green "$user"
-	    prompt_segment default default "@\h"
+	    prompt_segment blue default "\h"
+	    prompt_segment green white "$user"
     else
         prompt_segment white black "$(TZ=PRC date +%H:%M:%S)"
+	    prompt_segment blue default "\h"
 	    prompt_segment red white "$user"
-	    prompt_segment default default "@\h"
     fi
 }
 
