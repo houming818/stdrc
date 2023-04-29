@@ -30,8 +30,8 @@ set -g status-right "#[fg=white,bg=colour5] #(uptime | grep -oP '(?<=average:).*
 set -g status-right-style fg=white,bg=colour5
 
 # Window status
-set -g window-status-format "  #I:#W#F  "
-set -g window-status-current-format "#[fg=colour15,bg=green] #I:#W#F #[fg=colour15,bg=black]"
+set -g window-status-format " #I:#W#F "
+set -g window-status-current-format "#[fg=colour15,bg=red] #I:#W#F #[fg=colour15,bg=black]"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235
