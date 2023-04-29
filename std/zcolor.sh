@@ -216,11 +216,11 @@ prompt_context() {
     local user=`whoami`
 
     if [[ "$user" != "root" ]]; then
-        prompt_segment white cyan "$(date +%H:%M:%S)"
+        prompt_segment white black "$(date +%H:%M:%S)"
 	    prompt_segment default green "$user"
 	    prompt_segment default default "@\h"
     else
-        prompt_segment white cyan "$(date +%H:%M:%S)"
+        prompt_segment white black "$(date +%H:%M:%S)"
 	    prompt_segment red white "$user"
 	    prompt_segment default default "@\h"
     fi
