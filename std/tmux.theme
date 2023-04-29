@@ -17,7 +17,7 @@ set -g status-bg colour233
 
 # Left side of status bar
 set -g status-left-length 40
-set -g status-left "#(TZ=PRC date '%H:%M:%S') #[fg=colour1,bg=colour255,bold] #H #[fg=colour2,bg=colour247,bold] #(whoami)haha #[fg=colour3,bg=colour240] #S #[fg=colour255,bg=colour235] "
+set -g status-left "#(TZ=PRC date '%H:%M:%S') #[fg=colour0,bg=colour34,bold] #H #[fg=colour2,bg=colour247,bold] #(whoami)haha #[fg=colour3,bg=colour240] #S #[fg=colour255,bg=colour235] "
 set -g status-left-style bg=colour233,fg=colour243
 
 # Right side of status bar
