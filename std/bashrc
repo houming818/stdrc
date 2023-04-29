@@ -145,6 +145,14 @@ sdig() {
     fi
 }
 
+sk8s() {
+    if [ "$1" == "ns" ]; then
+        print swicth namespace to $2
+        kubectl config set-context --current --namespace=$2
+        return
+    fi
+}
+
 sspeed() {
     #IPINFO=$(curl https://api.myip.com 2>/dev/null)
     #IPINFO_IP=$(echo "$IPINFO"|grep -oP '\d+\.\d+\.\d+\.\d+')
