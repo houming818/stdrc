@@ -21,8 +21,8 @@ set -g status-left "#(TZ=PRC date '%H:%M:%S') #[fg=colour1,bg=colour255,bold] #H
 set -g status-style bg=colour233,fg=colour243
 
 # Right side of status bar
-set -g status-right-bg colour233
-set -g status-right-fg colour243
+#set -g status-right-bg colour233
+#set -g status-right-fg colour243
 set -g status-right-length 150
 set -g status-right ""
 
