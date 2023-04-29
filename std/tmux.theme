@@ -17,7 +17,7 @@ set -g status-bg colour233
 
 # Left side of status bar
 set -g status-left-length 40
-set -g status-left '#[fg=black,bg=white]%H:%M:%S #[fg=black,bg=blue]#H #[fg=white,bg=green]#(whoami) #[fg=colour3,bg=colour240] #S #[fg=colour255,bg=black]'
+set -g status-left '#[fg=black,bg=white]%h:%M:%S #[fg=black,bg=blue]#H #[fg=white,bg=green]#(whoami) #[fg=colour3,bg=colour240] #S #[fg=colour255,bg=black]'
 set -g status-left-style bg=colour233,fg=colour243
 
 # Right side of status bar
