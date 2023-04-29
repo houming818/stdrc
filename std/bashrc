@@ -147,7 +147,7 @@ sdig() {
 
 sk8s() {
     if [ "$1" == "ns" ]; then
-        print swicth namespace to $2
+        echo switch namespace to $2
         kubectl config set-context --current --namespace=$2
         return
     fi
