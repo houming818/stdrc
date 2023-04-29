@@ -25,9 +25,9 @@ set -g status-left '#[fg=black,bg=white] #(TZ=PRC date +"%%H:%%M:%%S") #[fg=whit
 set -g status-left-style bg=colour233,fg=colour243
 
 # Right side of status bar
-set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-style bg=maron,fg=white
 set -g status-right-length 150
-set -g status-right "#[fg=white,bg=maroon]#(uptime | grep -oP '(?<=average:).*')"
+set -g status-right "#[fg=white,bg=maroon] #(uptime | grep -oP '(?<=average:).*')"
 
 # Window status
 set -g window-status-format "  #I:#W#F  "
