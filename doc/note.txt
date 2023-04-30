@@ -7,6 +7,11 @@ manual run: echo 'source ~/.stdrc/std/bashrc' >> ~/.bashrc
 ## NVM Setup
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 
+## Go Setup
+wget https://golang.google.cn/dl/go1.20.3.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+
 ## Setup Neovim
 
 ### 安装最新版的Neovim
