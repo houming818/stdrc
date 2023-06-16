@@ -181,7 +181,7 @@ sspeed() {
 
 }
 
-stdwhois() {
+swhois() {
   whois -h $(whois -h whois.iana.org ${1##*.} |   egrep -e '^whois:' |   sed -e 's/[[:space:]][[:space:]]*/ /g' |   cut -d " " -f 2) $1
 }
 
@@ -230,6 +230,30 @@ stdd () {
     fi
 
     echo "usage: stdd [login|tags]"
+}
+
+sgo () {
+    if [ "$1" == "newproject" ]; 
+    then
+        mkdir $2
+        cd $2
+
+        mkdir -p cmd/myapp
+        mkdir -p pkg/mypackage
+        mkdir -p internal/myinternalpackage
+        mkdir -p api
+        mkdir -p web/static/css
+        mkdir -p web/static/js
+        mkdir -p web/templates
+        mkdir -p configs
+        mkdir -p scripts
+        mkdir -p test/mypackage
+        touch README.md
+        return 0
+    fi
+
+    echo "usage: sgo [newproject] [projectname]"
+    echo "example: sgo newproject myapp"
 }
 
 export PATH=~/.local/bin:/usr/local/go/bin:$PATH
