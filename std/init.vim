@@ -522,8 +522,11 @@ nmap <C-k> <C-W><Up>
 nmap <leader>o :on!<CR>:GitGutterDisable<CR>:set nonumber<CR>
 nmap <leader>O :GitGutterEnable<CR>:set number<CR>
 
+"" 错误信息
+
 nnoremap <silent> en :call CocAction('diagnosticNext')<cr> 
 nnoremap <silent> ep :call CocAction('diagnosticPrevious')<cr> 
+nnoremap <silent> EE :CocList diagnostics<cr> 
 
 """  buffer
 
