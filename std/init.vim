@@ -526,7 +526,7 @@ nmap <leader>O :GitGutterEnable<CR>:set number<CR>
 
 nnoremap <silent> en :call CocAction('diagnosticNext')<cr> 
 nnoremap <silent> ep :call CocAction('diagnosticPrevious')<cr> 
-nmap <leader>EE :CocList diagnostics<cr> 
+nmap <leader>E :CocList diagnostics<cr> 
 
 """  buffer
 
