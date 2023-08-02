@@ -561,6 +561,16 @@ nmap zz zc
 
 nmap <silent> <leader>ps <Plug>(pydocstring)
 
+
+""" coc快捷配置
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+"""
+
+
 "imap <tab> <C-X><C-O>
 "}}}
 
