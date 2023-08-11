@@ -256,4 +256,14 @@ sgo () {
     echo "example: sgo newproject myapp"
 }
 
+skmk () {
+    if [ "$1" == "showkey" ];
+    then
+        cat ~/.ssh/authorized_keys | ssh-keygen -lf -
+        return 0
+    fi
+    echo "usage: skmk [showkey]"
+    echo "example: skmk showkey 显示授权的key及hash"
+}
+
 export PATH=~/.local/bin:/usr/local/go/bin:$PATH
