@@ -11,5 +11,9 @@
     "rust-analyzer.checkOnSave.enable": true,
     "codeLens.enable": true,
     "java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
-    "java.referencesCodeLens.enabled": true
+    "java.referencesCodeLens.enabled": true,
+    "eslint.packageManager": "yarn",
+    "eslint.nodePath": ".yarn/sdks",
+    "workspace.workspaceFolderCheckCwd": false,
+    "tsserver.tsdk": ".yarn/sdks/typescript/lib"
 }
