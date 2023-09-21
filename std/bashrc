@@ -117,12 +117,7 @@ stdrc() {
 }
 
 sgeo() {
-    if [ x"$1" == x"" ]; then
-        curl -s https://t.grepcode.cn/geo?ip=$(curl -s https://t.grepcode.cn/ip)
-        return
-    fi
-    curl -s https://t.grepcode.cn/geo?ip=$1
-    return
+
 }
 
 sdig() {
@@ -266,14 +261,25 @@ skmk () {
     echo "example: skmk showkey 显示授权的key及hash"
 }
 
-smail () {
-    if [ "$1" == "send" ];
+st () {
+    if [ x"$1" == x"mail" ];
     then
-        curl -F "subject=$1" -F "content=$2" -F "file1=$3" https://t.grepcode.cn/api/v1/tool/sendmail/
+        curl -F "subject=$2" -F "content=$3" -F "file1=$4" https://t.grepcode.cn/api/v1/tool/sendmail/
+        return
     fi
 
-    echo "usage: smail [send] [subject] [content] [file]"
-    echo "example: smail send 'hello' 'world' '@file1'"
+    if [ x"$1" == x"geo" ]; then
+        curl -s https://t.grepcode.cn/api/v1/client/geo/
+        if [ x"$2" == x ]; then
+            curl -s https://t.grepcode.cn/api/v1/client/geo/
+        else
+            curl -s https://t.grepcode.cn/api/v1/client/geo/?ip=$2
+        fi
+        return
+    fi
+    echo "usage: st [send|geo]"
+    echo "example: st mail [subject] [content] [@file]"
+    echo "example: st geo [|192.168.1.1]"
 }
 
 export PATH=~/.local/bin:/usr/local/go/bin:$PATH
