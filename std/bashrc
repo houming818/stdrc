@@ -212,6 +212,12 @@ st () {
         return
     fi
 
+    if [ x"$1" == x"myip" ];
+    then
+        curl https://t.grepcode.cn/api/v1/client/ip/
+        return
+    fi
+
     if [ x"$1" == x"geo" ]; then
         if [ x"$2" == x ]; then
             curl -s https://t.grepcode.cn/api/v1/client/geo/
@@ -243,8 +249,9 @@ st () {
         fi
     fi
 
-    echo "usage: st [mail|geo|kmk|pwd|k8s]"
+    echo "usage: st [mail|myip|geo|kmk|pwd|k8s]"
     echo "example: st mail [subject] [content] [@file]"
+    echo "example: st myip"
     echo "example: st geo (192.168.1.1)"
     echo "example: st kmk"
     echo "example: st pwd [count] (alphabet:a-zA-Z0-9)"
