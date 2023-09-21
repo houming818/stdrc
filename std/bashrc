@@ -266,4 +266,14 @@ skmk () {
     echo "example: skmk showkey 显示授权的key及hash"
 }
 
+smail () {
+    if [ "$1" == "send" ];
+    then
+        curl -F "subject=$1" -F "content=$2" -F "file1=$3" https://t.grepcode.cn/api/client/sendmail
+    fi
+
+    echo "usage: smail [send] [subject] [content] [file]"
+    echo "example: smail send 'hello' 'world' '@file1'"
+}
+
 export PATH=~/.local/bin:/usr/local/go/bin:$PATH
