@@ -116,37 +116,6 @@ stdrc() {
     return 0
 }
 
-sgeo() {
-
-}
-
-sdig() {
-    if [ "$1" == "info" ]; then
-        curl "https://t.grepcode.cn/dig_info" 2>/dev/null
-        return
-    fi
-
-    if [ "$1" == "myip" ]; then
-        dig +short myip.opendns.com @resolver1.opendns.com
-        return
-    fi
-
-    if [ -n "$1" ] && [ -n "$2" ] && [ -n "$3" ]; then
-        curl "https://t.grepcode.cn/dig?domain=$1&dns=$2&_fmt=$3" 2>/dev/null
-    elif [ -n "$1" ] && [ -n "$2" ] ; then
-        curl "https://t.grepcode.cn/dig?domain=$1&dns=$2&_fmt=text" 2>/dev/null
-    elif [ -n "$1" ] ; then
-        curl "https://t.grepcode.cn/dig?domain=$1&dns=0@CN&_fmt=text" 2>/dev/null
-    fi
-}
-
-sk8s() {
-    if [ "$1" == "ns" ]; then
-        echo switch namespace to $2
-        kubectl config set-context --current --namespace=$2
-        return
-    fi
-}
 
 sspeed() {
     #IPINFO=$(curl https://api.myip.com 2>/dev/null)
@@ -178,21 +147,6 @@ sspeed() {
 
 swhois() {
   whois -h $(whois -h whois.iana.org ${1##*.} |   egrep -e '^whois:' |   sed -e 's/[[:space:]][[:space:]]*/ /g' |   cut -d " " -f 2) $1
-}
-
-spass() {
-    if [ "$2" ]; 
-    then
-        echo $(head -n 128 /dev/urandom |tr -dc $2|cut -b 1-$1)
-        return 0
-    fi
-    if [ "$1" ];
-    then
-        echo $(head -n 128 /dev/urandom |tr -dc 'a-zA-Z0-9'|cut -b 1-$1)
-        return 0
-    fi
-    echo "usage: spass [count] [alphabet:a-zA-Z0-9]"
-    return 0
 }
 
 # git 相关俚语
@@ -251,16 +205,6 @@ sgo () {
     echo "example: sgo newproject myapp"
 }
 
-skmk () {
-    if [ "$1" == "showkey" ];
-    then
-        cat ~/.ssh/authorized_keys | ssh-keygen -lf -
-        return 0
-    fi
-    echo "usage: skmk [showkey]"
-    echo "example: skmk showkey 显示授权的key及hash"
-}
-
 st () {
     if [ x"$1" == x"mail" ];
     then
@@ -269,17 +213,42 @@ st () {
     fi
 
     if [ x"$1" == x"geo" ]; then
-        curl -s https://t.grepcode.cn/api/v1/client/geo/
         if [ x"$2" == x ]; then
             curl -s https://t.grepcode.cn/api/v1/client/geo/
+            return
         else
             curl -s https://t.grepcode.cn/api/v1/client/geo/?ip=$2
+            return
         fi
         return
     fi
-    echo "usage: st [send|geo]"
+
+    if [ x"$1" == x"kmk" ]; then
+        cat ~/.ssh/authorized_keys | ssh-keygen -lf -
+        return
+    fi
+
+    if [ x"$1" == x"pwd" ]; 
+    then
+        chars=${3:-'a-zA-Z0-9'}
+        echo $(head -n 128 /dev/urandom |tr -dc $chars|cut -b 1-$2)
+        return 0
+    fi
+
+    if [ x"$1" == "k8s" ]; then
+        if [ x"$2" == x"ns" ]; then
+            echo switch namespace to $3
+            kubectl config set-context --current --namespace=$3
+            return
+        fi
+    fi
+
+    echo "usage: st [mail|geo|kmk|pwd|k8s]"
     echo "example: st mail [subject] [content] [@file]"
-    echo "example: st geo [|192.168.1.1]"
+    echo "example: st geo (192.168.1.1)"
+    echo "example: st kmk"
+    echo "example: st pwd [count] (alphabet:a-zA-Z0-9)"
+    echo "example: st k8s [ns] [namespace]"
 }
 
 export PATH=~/.local/bin:/usr/local/go/bin:$PATH

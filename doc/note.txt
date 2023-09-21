@@ -28,3 +28,6 @@ cp ~/.stdrc/std/coc-settings.json  ~/.config/nvim/
 mkdir -p ~/.config/nvim/pack/github/start
 git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
 :Copilot setup
+
+sdoc:
+  - ""
