@@ -30,4 +30,6 @@ git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/s
 :Copilot setup
 
 sdoc:
-  - ""
+  - "k8s"
+
+

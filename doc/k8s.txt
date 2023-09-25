@@ -1,0 +1,6 @@
+# k8s 常用命令
+
+## 速度拉起调试容器
+
+kubectl run busybox --image=busybox --image-pull-policy=IfNotPresent --restart=Never --tty -i
+
