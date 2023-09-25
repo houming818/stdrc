@@ -4,3 +4,5 @@
 
 kubectl run busybox --image=busybox --image-pull-policy=IfNotPresent --restart=Never --tty -i
 
+kubectl delete pod busybox
+
