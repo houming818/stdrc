@@ -241,7 +241,7 @@ st () {
         return 0
     fi
 
-    if [ x"$1" == "k8s" ]; then
+    if [ x"$1" == x"k8s" ]; then
         if [ x"$2" == x"ns" ]; then
             echo switch namespace to $3
             kubectl config set-context --current --namespace=$3
