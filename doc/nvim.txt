@@ -21,7 +21,10 @@ cp nvim /usr/local/bin
 
 ## method 2
 
-curl https://cdn.grepcode.cn/cn.grepcode/neovim/nvim.amd64 /tmp/nvim
+apt install -y lua5.1 liblua5.1-dev
+
+curl https://cdn.grepcode.cn/cn.grepcode/neovim/nvim.amd64 > /tmp/nvim
+
 chmod +x /tmp/nvim && mv /tmp/nvim /usr/local/bin/nvim
 
 ### 安装最新版的Neovim
