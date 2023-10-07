@@ -12,24 +12,9 @@ wget https://golang.google.cn/dl/go1.20.3.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 
-## Setup Neovim
-
-### 安装最新版的Neovim
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install neovim
-
-mkdir -p ~/.config/nvim/autoload
-cp ~/.stdrc/std/init.vim ~/.config/nvim/init.vim
-cp ~/.stdrc/std/plug.vim ~/.config/nvim/autoload/plug.vim
-cp ~/.stdrc/std/coc-settings.json  ~/.config/nvim/
-:CocInstall coc-css coc-git coc-go coc-html coc-java coc-json coc-lists coc-phpls coc-pyright coc-sh coc-tsserver coc-yaml coc-vue 
-mkdir -p ~/.config/nvim/pack/github/start
-git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
-:Copilot setup
 
 sdoc:
   - "k8s"
+  - "nvim"
 
 
