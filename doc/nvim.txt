@@ -21,7 +21,9 @@ cp nvim /usr/local/bin
 
 ## method 2
 
-apt install -y lua5.1 liblua5.1-dev
+apt install -y lua5.1 liblua5.1-dev gettext
+
+pip install cmake
 
 curl https://cdn.grepcode.cn/cn.grepcode/neovim/nvim.amd64 > /tmp/nvim
 
