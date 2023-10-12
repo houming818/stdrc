@@ -18,7 +18,7 @@ Plug 'https://github.com/flazz/vim-colorschemes' " colorschemes
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}  " Auto Completion
 Plug 'https://github.com/github/copilot.vim', {'branch': 'release'}  " Auto Completion
-Plug 'https://github.com/ryanoasis/vim-devicons', {'tag': 'v0.11.0'} " Developer Icons
+"Plug 'https://github.com/ryanoasis/vim-devicons', {'tag': 'v0.11.0'} " Developer Icons
 "Plug 'https://github.com/tc50cal/vim-terminal', {'branch': 'version/1.0'} " Vim Terminal
 Plug 'https://github.com/preservim/tagbar', {'tag': 'v3.0.0'} " Tagbar for code navigation
 "Plug 'https://github.com/terryma/vim-multiple-cursors', {'tag': 'v2.2'} " CTRL + N for multiple cursors
