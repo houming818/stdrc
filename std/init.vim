@@ -206,7 +206,7 @@ set noswapfile                  "  禁止生成临时文件
 set linespace=0
 set wildmenu                    "  增强模式中的命令行自动完成操作
 set backspace=2                 "  使回格键（backspace）正常处理indent, eol, start等
-set mouse=                    "  enable mouse
+set mouse=a                     "  enable mouse
 set selection=exclusive
 set selectmode=key
 set report=0                    "  通过使用: commands命令，告诉我们文件的哪一行被改变过
@@ -521,6 +521,10 @@ nmap <C-j> <C-W><Down>
 nmap <C-k> <C-W><Up>
 nmap <leader>o :on!<CR>:GitGutterDisable<CR>:set nonumber<CR>
 nmap <leader>O :GitGutterEnable<CR>:set number<CR>
+
+""" 复制到剪切板
+vnoremap  <leader>y  "+y
+nnoremap  <leader>y  "+y
 
 "" 错误信息
 
