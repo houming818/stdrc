@@ -500,7 +500,7 @@ let mapleader=","
 nmap <Leader>N :set invnumber<CR>
 """  toggle for the paste support
 """  粘贴模式开关
-:set pastetoggle=<Leader>y
+" :set pastetoggle=<Leader>y
 """  tagbar toggle
 """  tags窗口开关
 nmap <leader>T :TagbarToggle<CR>
