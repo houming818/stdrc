@@ -599,7 +599,8 @@ nmap <silent> gr <Plug>(coc-references)
 "    set termguicolors
 "  endif
 "endif
-set background=dark
+"set background=dark
+set background=light
 
 "let g:molokai_original = 0
 
