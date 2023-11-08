@@ -14,8 +14,8 @@ Plug 'https://github.com/preservim/nerdtree', {'tag': '6.10.16'} " NerdTree
 "Plug 'https://github.com/lifepillar/pgsql.vim'  " PSQL Pluging needs :SQLSetType pgsql.vim
 "Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 "Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
-Plug 'https://github.com/flazz/vim-colorschemes' " colorschemes
-Plug 'https://github.com/morhetz/gruvbox'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+"Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}  " Auto Completion
 Plug 'https://github.com/github/copilot.vim', {'branch': 'release'}  " Auto Completion
 "Plug 'https://github.com/ryanoasis/vim-devicons', {'tag': 'v0.11.0'} " Developer Icons
@@ -663,7 +663,7 @@ set statusline+=%0*\|%m%r%w%=                           "Modified? Readonly? Top
 
 "colorscheme moloka-i
 "colorscheme molokai_dark
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme OceanicNextLight
 "colorscheme materialbox
 "colorscheme github
