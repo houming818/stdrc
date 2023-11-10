@@ -113,6 +113,8 @@ stdrc() {
         cd ~/.stdrc
         git pull
     fi
+    mkdir -p ~/.config/nvim
+    cp ~/.stdrc/std/init.vim ~/.config/nvim/init.vim
     return 0
 }
 
