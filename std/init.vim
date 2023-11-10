@@ -660,7 +660,9 @@ set statusline+=%9*\|%03c                              "Colnr
 set statusline+=%0*\|%m%r%w%=                           "Modified? Readonly? Top/bot.
 
 """  choose the default colorscheme
-colorscheme catppuccin
+"colorscheme catppuccin
+"colorscheme catppuccin-latte
+coloresheme catppuccin-macchiato
 
 "colorscheme moloka-i
 "colorscheme molokai_dark
