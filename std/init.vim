@@ -662,7 +662,7 @@ set statusline+=%0*\|%m%r%w%=                           "Modified? Readonly? Top
 """  choose the default colorscheme
 "colorscheme catppuccin
 "colorscheme catppuccin-latte
-coloresheme catppuccin-macchiato
+set coloresheme catppuccin-macchiato
 
 "colorscheme moloka-i
 "colorscheme molokai_dark
