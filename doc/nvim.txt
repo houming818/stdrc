@@ -39,7 +39,7 @@ mkdir -p ~/.config/nvim/autoload
 cp ~/.stdrc/std/init.vim ~/.config/nvim/init.vim
 cp ~/.stdrc/std/plug.vim ~/.config/nvim/autoload/plug.vim
 cp ~/.stdrc/std/coc-settings.json  ~/.config/nvim/
-:CocInstall coc-css coc-git coc-go coc-html coc-java coc-json coc-lists coc-phpls coc-pyright coc-sh coc-tsserver coc-yaml coc-vue 
+:CocInstall coc-css coc-git coc-go coc-html coc-java coc-json coc-lists coc-phpls coc-pyright coc-sh coc-tsserver coc-yaml coc-vetur
 mkdir -p ~/.config/nvim/pack/github/start
 git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
 :Copilot setup
