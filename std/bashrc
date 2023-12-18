@@ -108,7 +108,7 @@ sdoc() {
 
 stdrc() {
     if [ ! -d ~/.stdrc ]; then
-        git clone https://gitee.com/stduolc/stdrc.git ~/.stdrc
+        git clone https://gitee.com/houming818/stdrc.git ~/.stdrc
     else
         cd ~/.stdrc
         git pull
