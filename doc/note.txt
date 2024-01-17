@@ -16,5 +16,5 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 sdoc:
   - "k8s"
   - "nvim"
-
+  - "vnc"
 

@@ -1,0 +1,19 @@
+sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
+
+--- ~/.vnc/xstartup
+#!/bin/sh
+def
+export XKL_XMODMAP_DISABLE=1
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+xrdb $HOME/.Xresources
+xsetroot -solid grey
+
+gnome-session &
+---
+
+vncserver -localhost no
+loginctl unlock-session
+vncserver -kill :1
+
