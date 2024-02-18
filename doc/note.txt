@@ -12,4 +12,5 @@ sdoc:
   - "k8s"
   - "nvim"
   - "vnc"
+  - "tmux"
 
