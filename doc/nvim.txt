@@ -35,6 +35,8 @@ sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
 
+
+### 如果需要作为开发环境，需要安装以下插件
 mkdir -p ~/.config/nvim/autoload
 cp ~/.stdrc/std/init.vim ~/.config/nvim/init.vim
 cp ~/.stdrc/std/plug.vim ~/.config/nvim/autoload/plug.vim
