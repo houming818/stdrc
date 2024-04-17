@@ -1,6 +1,6 @@
 # k8s 常用命令
 
-docker login ccr.ccs.tencentyun.com --username=****   password ****
+docker login ccr.ccs.tencentyun.com --username=****  --password=****
 
 docker tag busybox ccr.ccs.tencentyun.com/grepcode/busybox:latest
 
