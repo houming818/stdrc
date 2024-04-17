@@ -1,5 +1,11 @@
 # k8s 常用命令
 
+docker login ccr.ccs.tencentyun.com --username=****   password ****
+
+docker tag busybox ccr.ccs.tencentyun.com/grepcode/busybox:latest
+
+docker push ccr.ccs.tencentyun.com/grepcode/busybox:latest
+
 ## 速度拉起调试容器
 
 kubectl run busybox --image=busybox --image-pull-policy=IfNotPresent --restart=Never --tty -i
