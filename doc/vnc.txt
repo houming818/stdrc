@@ -14,6 +14,7 @@ gnome-session &
 ---
 
 vncserver -localhost no
+loginctl list-sessions
 loginctl unlock-session
 vncserver -kill :1
 
