@@ -1,0 +1,35 @@
+
+## 增加sshd_config
+
+```
+#############################
+# 如下内容由ansible自动添加 #
+#############################
+PasswordAuthentication yes
+
+# 确保启用SFTP子系统
+Subsystem sftp  /usr/lib/openssh/sftp-server
+
+# 为用户配置SFTP
+Match User userA
+    ChrootDirectory /mnt/sftp
+    ForceCommand internal-sftp
+    AllowTcpForwarding no
+    X11Forwarding no
+
+# mount on windows
+# \\sshfs\wuping@ne.grepcode.cn
+```
+
+
+## 设置目录权限
+
+```
+sudo mkdir -p /mnt/sftp
+sudo chown root:userA /mnt/sftp
+sudo chmod 755 /mnt/sftp
+```
+
+## mount on windows
+
+# \\sshfs\userA@hostA.grepcode.cn
