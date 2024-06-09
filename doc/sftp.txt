@@ -18,7 +18,7 @@ Match User userA
     X11Forwarding no
 
 # mount on windows
-# \\sshfs\userA@ne.grepcode.cn
+# \\sshfs\userA@hostA.grepcode.cn
 ```
 
 
@@ -32,4 +32,40 @@ sudo chmod 755 /mnt/sftp
 
 ## mount on windows
 
-# \\sshfs\userA@hostA.grepcode.cn
+```
+安装winfsp
+安装sshfs-win
+添加磁盘映射 \\sshfs\userA@hostA.grepcode.cn
+```
+
+## mount on linux
+
+安装sshfs：
+sudo apt update
+sudo apt install sshfs
+or
+sudo yum install sshfs
+
+复制公钥到远程主机：
+ssh-copy-id userA@hostA.grepcode.cn
+
+创建本地挂载点：
+mkdir /path/to/local/mountpoint
+
+挂载远程文件系统：
+sshfs userA@hostA.grepcode.cn:/remote/path /path/to/local/mountpoint -o allow_other
+-o allow_other 选项允许其他用户访问挂载的文件系统。
+
+检查挂载：
+mount | grep /path/to/local/mountpoint
+
+卸载文件系统：
+sudo umount /path/to/local/mountpoint
+
+添加sshfs条目：
+userA@hostA.grepcode.cn:/remote/path /path/to/local/mountpoint fuse.sshfs fuse defaults,_netdev,noauto 0 0
+fuse.sshfs：文件系统类型，这里指定为sshfs。
+defaults：使用默认挂载选项。
+_netdev：此选项表示挂载应该在网络接口可用后进行。
+noauto：表示不要在系统启动时自动挂载。
+0 0：表示不要备份此文件系统。
