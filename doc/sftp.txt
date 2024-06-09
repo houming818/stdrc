@@ -18,7 +18,7 @@ Match User userA
     X11Forwarding no
 
 # mount on windows
-# \\sshfs\wuping@ne.grepcode.cn
+# \\sshfs\userA@ne.grepcode.cn
 ```
 
 

@@ -13,4 +13,4 @@ sdoc:
   - "nvim"
   - "vnc"
   - "tmux"
-
+  - "sftp"
