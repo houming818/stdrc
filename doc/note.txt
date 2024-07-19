@@ -1,5 +1,5 @@
 # 下载所有的rc文件
-git clone https://gitee.com/houming818/stdrc.git ~/.stdrc
+git clone https://github.com/houming818/stdrc.git ~/.stdrc
 
 ## Setup bash
 manual run: echo 'source ~/.stdrc/std/bashrc' >> ~/.bashrc
