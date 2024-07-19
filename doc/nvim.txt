@@ -1,39 +1,15 @@
 
 # Setup Neovim
 
-## method 1
+## method 1 从release安装
+wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
+tar xfvz nvim-linux64.tar.gz
+mkdir ~/opt
+mv nvim-linux64 ~/opt
 
-apt install -y libncurses5-dev tree libxt-dev python-dev python3-dev ruby-dev lua5.1 liblua5.1-dev libperl-dev git build-essential clang python3-pip ycmd python3-hamcrest gperf luajit luarocks libuv1-dev libluajit-5.1-dev libunibilium-dev libmsgpack-dev libtermkey-dev libvterm-dev libutf8proc-dev gettext
+### 编辑 PATH变量
 
-pip install cmake
-
-git clone https://github.com/neovim/neovim.git
-
-cd neovim
-
-git checkout v0.9.2
-
-make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local/bin
-
-make install
-
-cp nvim /usr/local/bin
-
-## method 2
-
-apt install -y lua5.1 liblua5.1-dev gettext
-
-pip install cmake
-
-curl https://cdn.grepcode.cn/cn.grepcode/neovim/nvim.amd64 > /tmp/nvim
-
-chmod +x /tmp/nvim && mv /tmp/nvim /usr/local/bin/nvim
-
-### 安装最新版的Neovim
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install neovim
+PATH=$HOME/opt/nvim-linux64/bin:$PATH
 
 ### 必要安装以下插件
 mkdir -p ~/.config/nvim/autoload
